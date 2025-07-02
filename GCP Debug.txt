@@ -1,0 +1,15 @@
+Step 1
+gcloud auth login
+
+Step 2
+gcloud auth list
+
+Step 3 
+gcloud config set project nyc-taxi-pipeline-464708
+
+Step 4
+gcloud iam service-accounts add-iam-policy-binding \
+  data-pipeline-sa@nyc-taxi-pipeline-464708.iam.gserviceaccount.com \
+  --member="serviceAccount:434206544031-compute@developer.gserviceaccount.com" \
+  --role="roles/iam.serviceAccountUser" \
+  --project=nyc-taxi-pipeline-464708
